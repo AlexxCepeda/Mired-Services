@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Martel Sans', sans-serif;
+}
+
+.subtext {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/**Utilidades**/
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(./img/handcraft_cover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 60rem;
+}
+
+.nav {
+    --state-close: scale(0);
+    --state-hamburguer: scale(1);
+    --state-menu: translate(-100%);
+
+    padding: 40px 0;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.nav:target {
+    --state-close: scale(1);
+    --state-hamburguer: scale(0);
+    --state-menu: translate(0);
+
+}
+
+.nav__logo {
+    color: white;
+    font-size: 4.8rem;
+    z-index: 1;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav__hamburguer,
+.nav__close {
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+}
+
+.nav__hamburguer {
+    transform: var(--state-hamburguer);
+}
+
+.nav__close {
+    transform: var(--state-close);
+}
+
+.nav__links {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 0;
+
+    display: grid;
+    align-content: center;
+    gap: 2em;
+    padding-left: 5%;
+    background-color: #cc9c7c;
+    transform: var(--state-menu);
+    transition: .3s transform;
+
+}
+
+.nav__item {
+    list-style: none;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.nav__icon {
+    width: 40px;
+    filter: invert(100%);
+}
+
+.header__texto {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10rem;
+    /* width: 90%; */
+}
+
+.header__texto h2 {
+    margin: 2rem 0;
+}
+
+.header__texto p {
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.ubicacion p {
+    font-size: 2.8rem;
+    padding-top: 2rem;
+}
+
+.pindot {
+    width: 40px;
+    color: #fff;
+}
+
+.boton {
+    background-color: #cc9c7c;
+    color: white;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 90%;
+    text-align: center;
+    /* border: solid #341a0e 1px; */
+
+}
+
+.sub-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.information {
+    background-color: #d2a98d;
+    /* width: 90%; */
+    padding: 80px;
+}
+
+.information h2 {
+    /* padding: 2rem; */
+    font-size: 70px;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: #341a0e;
+}
+
+.information p {
+    font-size: 1.8rem;
+    padding: 2rem;
+    font-weight: 300;
+}
+
+.teamshot {
+    display: flex;
+    align-items: center;
+}
+
+.teamshot img {
+    width: 300px;
+    border-radius: 1rem;
+}
+
+.servicios {
+    background-color: #cc9c7c;
+    /* display: flex; */
+}
+
+.servicios h2 {
+    text-align: end;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    align-items: center;
+}
+
+.project-card {
+    width: 300px;
+    height: auto;
+    border: 1px solid #341a0e;
+    margin: 2rem;
+    box-shadow: 5px 5px 20px #624c2b;
+    text-align: center;
+    padding: 2rem;
+}
+
+.project-card h3 {
+    font-size: 2.8rem;
+}
+
+.project-image {
+    width: 200px;
+    height: 200px;
+    margin: 2rem 0;
+}
+
+.clientes {
+    background-color: #996633;
+}
+
+.cliente-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cliente-card {
+    width: auto;
+    height: 300px;
+    border: 1px solid #341a0e;
+    margin: 2rem;
+    box-shadow: 5px 5px 20px #624c2b;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+}
+
+.cliente-card h3 {
+    font-size: 2.8rem;
+}
+
+.cliente-image {
+    width: 200px;
+    height: 200px;
+    margin: 2rem 0;
+}
+
+.cliente-info {
+    display: block;
+}
+
+.cliente-card p {
+    border-top: 1px solid #341a0e;
+    margin: 0 5rem;
+}
+
+.contacto {
+    background-color: d2a98d;
+}
+
+.contacto h2 {
+    text-align: center;
+}
+
+.contacto-container {
+    border: 3px solid black;
+    height: 500px;
+}
+
+footer {
+    /* background-color: #b7a99a; */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .nav__logo {
+    color: #341a0e;
+    margin-right: 3rem;
+}
+
+footer p {
+    font-size: 1.8rem;
+}
+
+
+@media (max-width: 480px) {
+    .nav__logo {
+        font-size: 2.8rem;
+    }
+
+    .header__texto {
+        margin-top: 4rem;
+    }
+
+    .ubicacion p {
+        font-size: 2rem;
+    }
+
+    .information h2 {
+        font-size: 3.2rem;
+    }
+
+    .information p {
+        padding: 2rem 0;
+    }
+
+    .teamshot {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cliente-card {
+        flex-direction: column;
+        height: auto;
+        width: 300px;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .project-card {
+        margin: 0 0 1rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav {
+        --state-close: scale(0);
+        --state-hamburguer: scale(0);
+        --state-menu: translate(0);
+    }
+
+    .nav:target {
+        --state-close: scale(0);
+
+    }
+
+    .nav__links {
+        padding: 0;
+        background-color: unset;
+        position: unset;
+        gap: 1.5rem;
+        grid-auto-flow: column;
+
+        transform: unset;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+    }
+
+    .nav__link {
+        font-size: 2.4rem;
+        letter-spacing: none;
+        margin-left: 1rem;
+    }
+
+}
